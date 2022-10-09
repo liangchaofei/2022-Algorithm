@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(arr, target){
+            let len = arr.length;
+            let l = 0 , r = len - 1;
+            while(l <=r ){
+                let mid = parseInt((l + r) /2 )
+                if(arr[mid] === target){
+                    return mid
+                }else if(arr[mid] > target){
+                    r = mid - 1;
+                }else {
+                    l = mid + 1
+                }
+            }
+            return -1
+        }
+
+        var arr = [1,2,3,4];
+        var target = 9;
+        console.log(fn(arr,target))
+    </script>
+</body>
+</html>
